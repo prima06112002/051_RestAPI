@@ -7,7 +7,6 @@ import com.example.kontak.repository.KontakContainer
 class KontakApplication : Application() {
 
     lateinit var container: AppContainer
-
     override fun onCreate() {
         super.onCreate()
         container = KontakContainer()
