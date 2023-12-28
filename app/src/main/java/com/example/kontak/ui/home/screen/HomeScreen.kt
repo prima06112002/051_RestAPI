@@ -58,7 +58,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
@@ -81,14 +80,12 @@ fun HomeScreen(
             }
         },
     ) { innerPadding ->
-
         HomeStatus(
             kontakUIState = viewModel.kontakUIState,
             retryAction = {
                 viewModel.getKontak()
             },
             modifier = Modifier.padding(innerPadding),
-
             onDetailClick = onDetailClick,
             onDeleteClick = {
                 viewModel.deleteKontak(it.id)
