@@ -9,13 +9,9 @@ import java.lang.Exception
 interface KontakRepository {
     /* Fetches List of Kontak from kontakAPI */
     suspend fun getKontak(): List<Kontak>
-
     suspend fun insertKontak(kontak: Kontak)
-
     suspend fun updateKontak(id: Int, kontak: Kontak)
-
     suspend fun deleteKontak(id: Int)
-
     suspend fun getKontakById(id: Int): Kontak
 }
 
@@ -29,12 +25,10 @@ class NetworkKontakRepository(
     override suspend fun insertKontak(kontak: Kontak) {
         kontakApiService.insertKontak(kontak)
     }
-
     // update kontak
     override suspend fun updateKontak(id: Int, kontak: Kontak) {
         kontakApiService.updateKontak(id, kontak)
     }
-
     override suspend fun deleteKontak(id: Int) {
         try {
             val response = kontakApiService.deleteKontak(id)
